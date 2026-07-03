@@ -1,54 +1,75 @@
-// Main navigation functionality
-document.addEventListener('DOMContentLoaded', function() {
+// ============================================================
+// Footer year
+// ============================================================
+document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
+// ============================================================
+// Mobile nav toggle
+// ============================================================
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.querySelector('.nav-links');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
     });
-    
-});
-    // Mobile menu toggle (if you add one later)
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    if (mobileMenuButton) {
-        mobileMenuButton.addEventListener('click', function() {
-            const nav = document.querySelector('nav ul');
-            nav.classList.toggle('active');
-        });
-    }
-
-    // Add active class to current navigation item
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav ul li a').forEach(link => {
-        const linkPage = link.getAttribute('href').split('/').pop() || 'index.html';
-        if (linkPage === currentPage) {
-            link.classList.add('active');
-        }
-    });
-
-    // Project page specific functionality
-    if (window.location.pathname.includes('projects/')) {
-        // Add any project-specific JavaScript here
-        console.log('Project page loaded');
-    }
-});
-
-// Function to handle Power BI dashboard embedding
-function embedPowerBIDashboard() {
-    // This would be replaced with actual Power BI embedding code
-    console.log('Power BI dashboard embedded');
+  });
 }
 
-// Initialize any additional components
-document.addEventListener('DOMContentLoaded', embedPowerBIDashboard);
+// ============================================================
+// KPI counters — count up when the hero panel scrolls into view
+// ============================================================
+const kpiValues = document.querySelectorAll('.kpi-value');
+let kpiAnimated = false;
+
+function animateKpis() {
+  if (kpiAnimated) return;
+  kpiAnimated = true;
+  kpiValues.forEach(el => {
+    if (!('count' in el.dataset)) return; // non-numeric KPI, leave its text as-is
+    const target = parseInt(el.dataset.count, 10) || 0;
+    const suffix = el.dataset.suffix || '';
+    const duration = 1100;
+    const start = performance.now();
+
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+}
+
+const kpiPanel = document.querySelector('.kpi-panel');
+if (kpiPanel) {
+  const kpiObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateKpis();
+        kpiObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+  kpiObserver.observe(kpiPanel);
+}
+
+// ============================================================
+// Scroll reveal for sections
+// ============================================================
+document.querySelectorAll('.section').forEach(el => el.classList.add('reveal'));
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
