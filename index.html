@@ -3,181 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!--💡UPDATE: Change the title to your name-->
-    <title>Freedom Omojuwa | Data Analysis Portfolio</title>
-      
-    <!--💡UPDATE: Add your favicon here. You can generate one at realfavicongenerator.net-->
+
+    <!--💡UPDATE: change if you ever change your name/title-->
+    <title>Freedom Omojuwa | Data Analyst & Power BI Developer</title>
+    <meta name="description" content="Data analyst portfolio — Power BI and Excel dashboards, SQL analysis and case studies by Freedom Omojuwa.">
+
     <link rel="icon" type="image/png" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" href="/favicon-32x32.png">
-    
-    <!-- Google Fonts for Elegant Typography -->
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-    <!-- Your Stylesheet -->
+
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- HEADER SECTION -->
-<header>
-    <div class="container">
-        <!--💡UPDATE: Change to your name and title-->
-        <h1>Freedom Omojuwa</h1>
-        <p>Data Analyst | Power BI Developer </p>
-        <div class="social-links">
-            <!--💡UPDATE: Add your social media links and CV file-->
-            <a href="https://www.linkedin.com/in/freedom-omojuwa-1a64b8249" target="_blank" title="LinkedIn"> <i class="fab fa-linkedin"></i> </a>
-            <a href="https://github.com/Freedom-omojuwa" target="_blank" title="GitHub"> <i class="fab fa-github"></i> </a>
-            <a href="https://x.com/FreedomOmojuwa" target="_blank" title="X"><i class="fab fa-x-twitter"></i></a>
-            <a href="assets/FREEDOM JOSEPH OMOJUWA CV.pdf" download title="Download CV"><i class="fas fa-file-arrow-down"></i></a>
+<!-- ======================= TOP BAR ======================= -->
+<header class="topbar">
+    <div class="container topbar-inner">
+        <div class="brand">
+            <span class="brand-dot" aria-hidden="true"></span>
+            <!--💡UPDATE: your name/handle-->
+            <span>Freedom Omojuwa</span>
         </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about"><span class="nav-num">01</span> About</a></li>
+                <li><a href="#projects"><span class="nav-num">02</span> Projects</a></li>
+                <li><a href="#skills"><span class="nav-num">03</span> Skills</a></li>
+                <li><a href="#contact"><span class="nav-num">04</span> Contact</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
     </div>
 </header>
 
-<!-- NAVIGATION -->
-<nav>
-    <div class="container nav-wrapper">
+<!-- ======================= HERO / DASHBOARD PANEL ======================= -->
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-copy">
+            <div class="eyebrow">Data Analyst · Power BI Developer</div>
+            <!--💡UPDATE: your name-->
+            <h1>Freedom <span class="accent">Omojuwa</span></h1>
+            <!--💡UPDATE: your one-line pitch-->
+            <p class="lede">
+                I turn raw data into interactive dashboards and clear insights —
+                helping teams see their numbers, and act on them.
+            </p>
 
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+            <div class="cta-row">
+                <a href="#projects" class="btn btn-primary">View projects</a>
+                <!--💡UPDATE: link/rename your CV file if needed-->
+                <a href="assets/FREEDOM JOSEPH OMOJUWA CV.pdf" download class="btn btn-ghost">
+                    <i class="fas fa-file-arrow-down"></i> Download CV
+                </a>
+            </div>
 
-    </div>
-</nav>
+            <!--💡UPDATE: your social links-->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/freedom-omojuwa-1a64b8249" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Freedom-omojuwa" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/FreedomOmojuwa" target="_blank" rel="noopener" title="X"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
 
-<!-- ABOUT SECTION -->
-<section id="about" class="section">
-    <div class="container">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <!--💡UPDATE: Change the image to your own profile photo in assets/images/-->
-            <img src="assets/images/freedom_profile.jpeg" alt="Freedom Omojuwa" class="profile-photo">
-            <div class="about-text">
-                <!--💡UPDATE: Write your own 'About Me' text here-->
-                <p>I’m an aspiring data analyst passionate about transforming raw data into meaningful insights that support smarter business decisions. I enjoy working with datasets, building dashboards, and uncovering trends that help organizations better understand their performance. </p>
-                <p> With experience in Excel, SQL, Power BI, and workflow automation, I focus on creating clear visualizations, interactive reports, and efficient data solutions. This portfolio showcases projects that reflect my growing journey in data analytics and business intelligence. </p>
+        <!-- KPI panel — styled like a dashboard summary widget -->
+        <div class="kpi-panel" aria-hidden="false">
+            <div class="kpi-panel-header">
+                <span>OVERVIEW</span>
+                <span class="live-pill"><span class="live-dot"></span> Live</span>
+            </div>
+            <svg class="sparkline" viewBox="0 0 300 70" preserveAspectRatio="none">
+                <polyline points="0,55 30,45 60,50 90,30 120,38 150,20 180,28 210,15 240,22 270,10 300,18"/>
+            </svg>
+            <div class="kpi-grid">
+                <!--💡UPDATE: keep these honest — update the numbers as you finish more projects-->
+                <div class="kpi">
+                    <div class="kpi-value" data-count="2">0</div>
+                    <div class="kpi-label">Excel dashboards</div>
+                </div>
+                <div class="kpi">
+                    <div class="kpi-value" data-count="6">0</div>
+                    <div class="kpi-label">Tools in toolkit</div>
+                </div>
+                <div class="kpi">
+                    <!-- Non-numeric KPI: no data-count, so it won't count up — just shows this text -->
+                    <div class="kpi-value kpi-value-text">Open</div>
+                    <div class="kpi-label">To new opportunities</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- PROJECTS SECTION -->
+<!-- ======================= ABOUT ======================= -->
+<section id="about" class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="widget-tag">Widget 01</span>
+            <h2>About</h2>
+        </div>
+
+        <div class="about-content">
+            <!--💡UPDATE: swap for your own photo in assets/images/-->
+            <img src="assets/images/freedom_profile.jpeg" alt="Freedom Omojuwa" class="profile-photo">
+            <div class="about-text">
+                <!--💡UPDATE: your own bio-->
+                <p>I'm an aspiring data analyst passionate about transforming raw data into meaningful insights
+                   that support smarter business decisions. I enjoy working with datasets, building dashboards,
+                   and uncovering trends that help organizations better understand their performance.</p>
+                <p>With experience in Excel, SQL, Power BI, and workflow automation, I focus on creating clear
+                   visualizations, interactive reports, and efficient data solutions. This portfolio showcases
+                   projects that reflect my growing journey in data analytics and business intelligence.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= PROJECTS ======================= -->
 <section id="projects" class="section">
     <div class="container">
-        <h2>My Projects</h2>
+        <div class="section-head">
+            <span class="widget-tag">Widget 02</span>
+            <h2>Projects</h2>
+        </div>
+
         <div class="projects-grid">
 
-            <!--💡UPDATE: Replace this with your own project. Add as many as you like!-->
             <!-- Project 1 -->
-             <div class="project-card">
-                <!--💡UPDATE: Add a preview image of your project to assets/images/ -->
-                <img src="assets/images/furniture-sales-dashboard.png" alt="Project One Preview">
+            <div class="project-card" data-tool="powerbi">
+                <div class="project-media">
+                    <img src="assets/images/furniture-sales-dashboard.png" alt="Furniture Sales Performance Dashboard preview">
+                </div>
                 <div class="project-card-content">
-                    <h3>Furniture Sales Performance Dashboard (Excel)</h3>
+                    <span class="tool-chip">Excel</span>
+                    <h3>Furniture Sales Performance Dashboard</h3>
                     <p>Interactive Excel dashboard analyzing furniture sales across regions in the United States.
-                      It uncovers insights on sales, profit, shipping performance, customer segments, and product categories
-                       using Power Query, Pivot Tables, and Pivot Charts.</p>
+                       It uncovers insights on sales, profit, shipping performance, customer segments, and
+                       product categories using Power Query, Pivot Tables, and Pivot Charts.</p>
                     <div class="project-buttons">
-                        <!--💡UPDATE: Add link to your project's code/documentation on GitHub-->
-                        <a href="https://github.com/Freedom-omojuwa/furniture-sales-performance-dashboard.git" target="_blank" class="btn">Documentation</a>
-                        <!--💡UPDATE: Add link to your live dashboard (e.g., Power BI, Tableau Public)-->
-                        <a href="dashboard link" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Freedom-omojuwa/furniture-sales-performance-dashboard.git" target="_blank" rel="noopener" class="btn btn-ghost">
+                            <i class="fab fa-github"></i> Documentation
+                        </a>
+                        <!--💡UPDATE: replace # with your live dashboard link-->
+                        <a href="#" target="_blank" rel="noopener" class="btn btn-primary">
+                            <i class="fas fa-chart-line"></i> View dashboard
+                        </a>
                     </div>
                 </div>
             </div>
 
             <!-- Project 2 -->
-            <div class="project-card">
-                <img src="assets/images/Customer Segmentation.png" alt="Project Two Preview">
+            <div class="project-card" data-tool="excel">
+                <div class="project-media">
+                    <img src="assets/images/Customer Segmentation.png" alt="Customer Segmentation Analysis Dashboard preview">
+                </div>
                 <div class="project-card-content">
-                    <h3>Customer Segmentation Analysis Dashboard (Excel)</h3>
-                    <p>Interactive Excel dashboard designed to analyze customer demographics, income levels, loyalty segments, occupations, and customer growth patterns to support customer-focused business decisions using Power Query, Pivot Tables, and Pivot Charts</p>
+                    <span class="tool-chip">Excel</span>
+                    <h3>Customer Segmentation Analysis Dashboard</h3>
+                    <p>Interactive Excel dashboard designed to analyze customer demographics, income levels,
+                       loyalty segments, occupations, and customer growth patterns to support customer-focused
+                       business decisions using Power Query, Pivot Tables, and Pivot Charts.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Freedom-omojuwa/Customer-Segmentation-Analysis-Dashboard-Excel-.git" target="_blank" class="btn">Documentation</a>
-                        <a href="dashboard link" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Freedom-omojuwa/Customer-Segmentation-Analysis-Dashboard-Excel-.git" target="_blank" rel="noopener" class="btn btn-ghost">
+                            <i class="fab fa-github"></i> Documentation
+                        </a>
+                        <!--💡UPDATE: replace # with your live dashboard link-->
+                        <a href="#" target="_blank" rel="noopener" class="btn btn-primary">
+                            <i class="fas fa-chart-line"></i> View dashboard
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="assets/images/project-placeholder-3.jpg" alt="Project Three Preview">
+            <!-- Project 3 — REPLACE with a real project, or delete this whole .project-card block -->
+            <div class="project-card" data-tool="sql">
+                <div class="project-media placeholder-media">
+                    <!--💡UPDATE: delete this placeholder div and add
+                         <img src="assets/images/project-3.png" alt="..."> once you have a screenshot -->
+                    <div class="placeholder-txt"><i class="fas fa-image"></i><span>Add screenshot<br>assets/images/project-3.png</span></div>
+                </div>
                 <div class="project-card-content">
+                    <span class="tool-chip">SQL</span>
+                    <!--💡UPDATE: project title-->
                     <h3>Project Title Three</h3>
-                    <p>A brief, one or two-sentence description of your project, what it does, and the tools you used.</p>
+                    <!--💡UPDATE: 1–2 sentence description + tools used-->
+                    <p>A brief description of your project, what it does, and the tools you used.</p>
                     <div class="project-buttons">
-                        <a href="[YOUR_GITHUB_PROJECT_URL]" target="_blank" class="btn">Documentation</a>
-                        <a href="[YOUR_LIVE_DASHBOARD_URL]" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <!--💡UPDATE: your GitHub link-->
+                        <a href="#" target="_blank" rel="noopener" class="btn btn-ghost">
+                            <i class="fab fa-github"></i> Documentation
+                        </a>
+                        <!--💡UPDATE: your live dashboard link-->
+                        <a href="#" target="_blank" rel="noopener" class="btn btn-primary">
+                            <i class="fas fa-chart-line"></i> View dashboard
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 4 -->
-            <div class="project-card">
-                <img src="assets/images/project-placeholder-4.jpg" alt="Project Four Preview">
+            <!-- Project 4 — REPLACE with a real project, or delete this whole .project-card block -->
+            <div class="project-card" data-tool="powerbi">
+                <div class="project-media placeholder-media">
+                    <div class="placeholder-txt"><i class="fas fa-image"></i><span>Add screenshot<br>assets/images/project-4.png</span></div>
+                </div>
                 <div class="project-card-content">
+                    <span class="tool-chip">Power BI</span>
                     <h3>Project Title Four</h3>
-                    <p>A brief, one or two-sentence description of your project, what it does, and the tools you used.</p>
+                    <p>A brief description of your project, what it does, and the tools you used.</p>
                     <div class="project-buttons">
-                        <a href="[YOUR_GITHUB_PROJECT_URL]" target="_blank" class="btn">Documentation</a>
-                        <a href="[YOUR_LIVE_DASHBOARD_URL]" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="#" target="_blank" rel="noopener" class="btn btn-ghost">
+                            <i class="fab fa-github"></i> Documentation
+                        </a>
+                        <a href="#" target="_blank" rel="noopener" class="btn btn-primary">
+                            <i class="fas fa-chart-line"></i> View dashboard
+                        </a>
                     </div>
                 </div>
             </div>
+
+            <!-- TO ADD MORE PROJECTS: copy one whole .project-card block and paste it here -->
 
         </div>
     </div>
 </section>
 
-<!-- SKILLS SECTION -->
+<!-- ======================= SKILLS ======================= -->
 <section id="skills" class="section">
     <div class="container">
-        <h2>Technical Skillset</h2>
+        <div class="section-head">
+            <span class="widget-tag">Widget 03</span>
+            <h2>Technical Skillset</h2>
+        </div>
+
         <div class="skills-table">
-            
-            <!--💡UPDATE: Customize your skills in each category-->
-            <!-- Column 1: Data Visualization -->
+
             <div class="skill-column">
                 <div class="skill-header">
                     <i class="fas fa-chart-pie"></i>
                     <h3>Data Visualization</h3>
                 </div>
                 <ul class="skill-list">
-                    <li>Power BI & Business Reporting</li>
+                    <li>Power BI &amp; Business Reporting</li>
                     <li>Excel Dashboard Development</li>
-                    <li>SQL Querying & Data Analysis</li>
                     <li>Interactive Data Visualization</li>
-                    <li>Data Cleaning & Transformation</li>
                     <li>Google Workspace Automation</li>
                 </ul>
             </div>
 
-            <!-- Column 2: Data Analysis -->
             <div class="skill-column">
                 <div class="skill-header">
                     <i class="fas fa-search-plus"></i>
                     <h3>Data Analysis</h3>
                 </div>
                 <ul class="skill-list">
-                    <li>SQL</li>
+                    <li>SQL Querying &amp; Analysis</li>
                     <li>Advanced Excel</li>
                     <li>Google Sheets</li>
+                    <li>Data Cleaning &amp; Transformation</li>
                 </ul>
             </div>
 
-            <!-- Column 3: Data Modeling & ETL -->
             <div class="skill-column">
                 <div class="skill-header">
                     <i class="fas fa-cogs"></i>
-                    <h3>Data Modeling & ETL</h3>
+                    <h3>Data Modeling &amp; ETL</h3>
                 </div>
                 <ul class="skill-list">
                     <li>Power Query (M)</li>
@@ -190,23 +287,28 @@
     </div>
 </section>
 
-<!-- CONTACT FORM SECTION -->
+<!-- ======================= CONTACT ======================= -->
 <section id="contact" class="section">
     <div class="container">
-        <h2>Let's Connect</h2>
-        
-        <!--💡UPDATE: Go to formsubmit.co and replace the email with your own-->
-        <form action="https://formsubmit.co/freedomomojuwa@gmail.com" method="POST" class="contact-form"> <p>
-        I’m open to opportunities, collaborations, and data-related discussions. Feel free to reach out, I’m always happy to connect.</p>
+        <div class="section-head">
+            <span class="widget-tag">Widget 04</span>
+            <h2>Let's Connect</h2>
+        </div>
 
-            <!-- Form Fields -->
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Your name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Your email" required>
+        <p class="contact-intro">I'm open to opportunities, collaborations, and data-related discussions.
+           Feel free to reach out — I'm always happy to connect.</p>
+
+        <!--💡UPDATE: go to formsubmit.co and replace the email with your own-->
+        <form action="https://formsubmit.co/freedomomojuwa@gmail.com" method="POST" class="contact-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Your email" required>
+                </div>
             </div>
             <div class="form-group">
                 <label for="subject">Subject</label>
@@ -216,23 +318,20 @@
                 <label for="message">Message</label>
                 <textarea name="message" id="message" rows="6" placeholder="Your message" required></textarea>
             </div>
-            
-            <!-- Submit Button -->
-            <button type="submit" class="btn">Send Message</button>
-
+            <button type="submit" class="btn btn-primary btn-wide">Send message</button>
         </form>
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ======================= FOOTER ======================= -->
 <footer>
-    <div class="container">
-        <!--💡UPDATE: Change the year and your name-->
-        <p>&copy; 2026 Freedom Omojuwa. All rights reserved.</p>
+    <div class="container footer-inner">
+        <!--💡UPDATE: your name-->
+        <p>&copy; <span id="year"></span> Freedom Omojuwa. All rights reserved.</p>
+        <a href="#top" class="back-to-top">Back to top ↑</a>
     </div>
 </footer>
 
 <script src="assets/js/main.js"></script>
-
 </body>
 </html>
